@@ -1,6 +1,6 @@
 .text{
     font-weight: bold;
 }
-.small {font-size: 20px;}
-.meduim {font-size:30px ;}
-.large {font-size: 40px;}
+.small { font-size: 0.875rem;}
+.meduim {font-size: 1;}
+.large {font-size: 1.25rem;}

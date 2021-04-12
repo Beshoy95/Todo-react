@@ -1,11 +1,12 @@
-import React, { useState, createContext } from "react";
-
+import React, { useState, useEffect ,createContext } from "react";
 export const TodoListContext = createContext();
 
 const TodoListContextProvider = (props) => {
-  const [todos, setTodos] = useState([
-      { id: 1, name: "test" }       
-    ]);
+  const [todos, setTodos] = useState(JSON.parse(localStorage.getItem("todosListApp")) || []);
+
+  useEffect(() => {
+    localStorage.setItem("todosListApp", JSON.stringify(todos));
+  }, [todos]);
 
   const addTodo = (name) => {
     setTodos([

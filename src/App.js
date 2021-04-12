@@ -2,34 +2,43 @@ import React from 'react'
 import TodoList from "./components/TodoList";
 import TodoListContextProvider from "./context/TodoListContext";
 import TodoInput from './components/TodoInput';
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-
+import {Text,Heading,VStack,IconButton, useColorMode} from "@chakra-ui/react";
 import Input from './stories/Input/Input';
 import Button from './stories/Button/Button';
 import Headline from './stories/Headline/Headline';
+import { FaSun, FaMoon } from "react-icons/fa";
 
 const App = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
     return (
     <>  
     
-    <div className="storybook container mt-5 mx-2">  
+    <div>  
     <Headline/>
-    <div className="d-flex">
     <Input/>
     <Button/>
-    </div>  
     </div> 
    
-    <TodoListContextProvider>
-      <div className="container">
-        <div className="d-flex justify-content-center">
-          <div>
-          <h2 className="text-center">Todo App</h2>        
+    <TodoListContextProvider>    
+       <VStack p={4}>
+       
+       <IconButton 
+       icon={colorMode === "light" ? <FaSun /> : <FaMoon />}
+       isRound={true}
+       alignSelf="flex-end"
+       onClick={toggleColorMode}/>
+
+            <Heading 
+             mb="8"
+            fontWeight="extrabold"
+            bgGradient="linear(to-r,pink.500,pink.300,blue.500)"
+            bgClip="text">
+              <Text mb="8">TODO App </Text>  
+            </Heading>
+
           <TodoInput/>
-         <TodoList />
-          </div>
-        </div>     
-      </div>       
+         <TodoList />      
+      </VStack>
       </TodoListContextProvider>
     </>);
 }
