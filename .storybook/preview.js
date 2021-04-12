@@ -1,3 +1,5 @@
+import React from 'react';
+import { ChakraProvider,extendTheme,theme ,Box ,CSSReset } from "@chakra-ui/react"
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -12,3 +14,14 @@ export const parameters = {
     },
   },
 }
+
+export const decorators = [
+  (Story)=>(
+   <ChakraProvider theme={theme}>
+     <CSSReset/>
+     <Box>
+       <Story/>
+     </Box>
+  </ChakraProvider>
+  )
+  ]

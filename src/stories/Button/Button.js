@@ -7,7 +7,7 @@ function Button(props) {
   return (
     <div>
       <button className={`button ${variant}`} {...rest}>
-         Add Todo
+        {children}
       </button>
     </div>
   )
