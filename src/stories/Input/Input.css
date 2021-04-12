@@ -1,0 +1,16 @@
+.input{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 0.25rem;
+    border:1px solid;
+    border-color: inherit;
+    background-color: #fff;
+    -webkit-border-radius: 0.25rem;
+    -moz-border-radius: 0.25rem;
+    -ms-border-radius: 0.25rem;
+    -o-border-radius: 0.25rem;
+}
+
+.small {height: 2rem;font-size: 0.875rem; width: 150px;}
+.meduim {height: 2.5rem;font-size: 0.875rem; width: 200px;}
+.large {height: 3rem;font-size: 0.875rem; width: 250px;}
